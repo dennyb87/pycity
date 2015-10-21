@@ -1,3 +1,4 @@
+#!/usr/bin/python
 
 
 def hi_fiven():
@@ -15,7 +16,6 @@ def hi_fiven():
 	msg += "HiEven\n" if number % 2 == 0 else ""
 
 	print(msg)
-
 
 
 def math_learning_tool():
@@ -43,5 +43,41 @@ def math_learning_tool():
 	print("Your answer is {}".format(solution))
 
 
+def chinese_zodiac():
 
-math_learning_tool()
+	'''
+	Now let us write a program to find out the Chinese
+	Zodiac sign for a given year. The Chinese Zodiac sign
+	is based on a 12-year cycle, each year being represented
+	by an animal: rat, ox, tiger, rabbit, dragon, snake,
+	horse, sheep, monkey, rooster, dog, and pig, in this cycle.
+	'''
+
+	zodiac = (
+		"monkey",
+		"rooster",
+		"dog",
+		"pig",
+		"rat",
+		"ox",
+		"tiger",
+		"rabbit",
+		"dragon",
+		"snake",
+		"horse",
+		"sheep"
+		)
+
+	user_string = input("Enter an year: ")
+	sign = zodiac[int(user_string) % 12]
+
+	print("Your sign is {} !".format(sign))
+
+
+
+
+#hi_fiven()
+
+#math_learning_tool
+
+chinese_zodiac()
