@@ -24,4 +24,4 @@ if __name__ == "__main__":
 
     user_input = input("Enter an integer: ")
     number = int(user_input)
-    hi_feven(number)
+    print(hi_feven(number))
