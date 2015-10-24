@@ -20,7 +20,7 @@ def hi_feven(number):
 if __name__ == "__main__":
 
     import doctest
-    doctest.testmod()
+    doctest.testmod(raise_on_error=True)
 
     user_input = input("Enter an integer: ")
     number = int(user_input)
