@@ -28,4 +28,4 @@ if __name__ == "__main__":
     import doctest
     doctest.testmod(raise_on_error=True)
 
-    print bmi_calculator(65, 1.65)    
+    print bmi_calculator(65, 1.65)
