@@ -21,4 +21,3 @@ if __name__ == "__main__":
     user_input = input("Enter an year: ")
     year = int(user_input)
     print(is_leap_year(year))
-    print(dir())
