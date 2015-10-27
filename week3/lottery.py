@@ -23,19 +23,15 @@ def lottery(user_numbers):
         .format(lottery_numbers, user_numbers)
 
     if guessed == 0:
-
         msg += "lose!"
 
     elif guessed == 1:
-
         msg += "won 1,000 pounds!"
 
     elif lottery_numbers == user_numbers:
-
         msg += "won 10,000 pounds!"
 
     else:
-
         msg += "won 3,000 pounds!"
 
     return msg
