@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 '''
 Write a program that randomly generates a lottery of a two-digit number,

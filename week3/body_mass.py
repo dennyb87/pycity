@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 '''
 Body Mass Index (BMI) is a measure of health on weight.
@@ -11,21 +11,30 @@ and dividing by the square of your height in meters.
 
 def bmi_calculator(weight, height):
 
-    BMI = weight / height**2
+    bmi = weight / height**2
 
-    TABLE = (
-        ((29.9), "Obese"),
-        ((24.9), "Overweight"),
-        ((18.5), "Normal"),
-        ((0), "Underweight"),
-        )
+    OVERWEIGHT, NORMAL, UNDERWEIGHT = 29.9, 24.9, 18.5
 
-    return [ TABLE[TABLE.index(data)][1] for data in TABLE if BMI > data[0] ][0]
+    if bmi > OVERWEIGHT:
+
+        return "Obese"
+
+    elif OVERWEIGHT >= bmi > NORMAL:
+
+        return "Overweight"
+
+    elif NORMAL >= bmi > UNDERWEIGHT:
+
+        return "Normal"
+
+    elif bmi <= UNDERWEIGHT:
+
+        return "Underweight"
 
 
 if __name__ == "__main__":
 
     import doctest
-    doctest.testmod(raise_on_error=True)
+    doctest.testmod()
 
-    print bmi_calculator(65, 1.65)
+    print(bmi_calculator(65, 1.65))

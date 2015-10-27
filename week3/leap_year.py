@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 '''
 This program first prompts the user to enter a year
@@ -10,7 +10,11 @@ True
 
 def is_leap_year(year):
 
-    return True if year%4 == 0 and year%100 != 0 or year%400 == 0 else False
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+
+    	return True
+
+    return False
 
 
 if __name__ == "__main__":
