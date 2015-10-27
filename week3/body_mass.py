@@ -16,19 +16,15 @@ def bmi_calculator(weight, height):
     OVERWEIGHT, NORMAL, UNDERWEIGHT = 29.9, 24.9, 18.5
 
     if bmi > OVERWEIGHT:
-
         return "Obese"
 
     elif OVERWEIGHT >= bmi > NORMAL:
-
         return "Overweight"
 
     elif NORMAL >= bmi > UNDERWEIGHT:
-
         return "Normal"
 
     elif bmi <= UNDERWEIGHT:
-
         return "Underweight"
 
 
