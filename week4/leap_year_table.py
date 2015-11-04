@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 
 '''
-Write a program that displays the following table
-(note that 1 mile is 1.609 kilometres):
-Miles Kilometres
-1       1.609
-2       3.218
-...
-9       15.481
-10      16.090
+Write a program that displays, ten per line
+all the leap years in the twenty-first century
+(from year 2001 to 2100).
+The years are separated by exactly one space.
+
+>>> list(leap_year_range(2001, 2010))
+[2004, 2008]
 '''
 
 def is_leap_year(year):
@@ -22,20 +21,24 @@ def is_leap_year(year):
 
     return False
 
-def leap_year_table():
-
-    start = 2001
-    end = 2100
+def leap_year_range(start, end):
 
     for year in range(start, end + 1):
 
-        if year % 10 == 0:
-            print()
-
         if is_leap_year(year):
-            print(year, end=" ")
+            yield year
 
 
 if __name__ == "__main__":
 
-    leap_year_table()
+    import doctest
+    doctest.testmod(raise_on_error=True)
+
+    count = 1
+
+    for year in leap_year_range(2001, 2100):
+
+        end = "\n" if count % 10 == 0 else " "
+        print(year, end=end)
+
+        count+=1
