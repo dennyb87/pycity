@@ -23,6 +23,10 @@ def is_leap_year(year):
 
 def leap_year_range(start, end):
 
+    '''
+    Leap year generator
+    '''
+
     for year in range(start, end + 1):
 
         if is_leap_year(year):
