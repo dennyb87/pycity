@@ -1,45 +1,67 @@
+#!/usr/bin/env python3
+
+'''
+Write a program that prompts the user to enter
+the number of students and each student’s score
+and displays the highest score.
+Assume that the input is stored in a file named
+score.txt, and the program obtains the input from
+the file.
+NB: here we want to use input redirection.
+It means that the same input that could be obtained
+from the user entering the data manually, can be
+obtain from a text file.
+You will launch your program like this:
+python name_of_your_program.py < score.txt
+
+This improved version works also if multiple students
+have the same score
+'''
 
 number_of_students = int(input("\nEnter the number of students:"))
 
+# set the student 'Nobody' just for clarity
 current_student = ("Nobody", 0)
 
-first_highest = [current_student]
-second_highest = [current_student]
+first_place = [current_student]
+second_place = [current_student]
 
 while number_of_students > 0:
     name = input("\nEnter student's name: ")
     score = input("\nEnter student's score: ")
 
-    if not name:
+    if not name or not score:
         break
 
-    current_student = (name, int(score))
-    score = current_student[1]
+    score = int(score)
+    current_student = (name, score)
 
-    first_score = first_highest[0][1]
-    second_score = second_highest[0][1]
+    # retrieve the two highest scorers from lists
+    first_score = first_place[0][1]
+    second_score = second_place[0][1]
 
     if score > first_score:
-        second_highest = first_highest
-        first_highest = [current_student]
+        second_place = first_place
+        first_place= [current_student]
 
     elif score == first_score:
-        first_highest.append(current_student)
+        first_place.append(current_student)
+
+    elif score > second_score:
+        second_place = [current_student]
 
     elif score == second_score:
-        second_highest.append(current_student)
+        second_place.append(current_student)
 
     number_of_students-=1
 
 
-print("\n")
-print("Top scores:")
-for students in first_highest:
-    print(students[0], students[1], end=" ")
-print("\n")
-for students in second_highest:
-    print(students[0], students[1], end=" ")
-print("\n")
+print("\n\nFirst place")
+for name, score in first_place:
+    print(name, score, end=" ")
 
+print("\n\nSecond place")
+for name, score in second_place:
+    print(name, score, end=" ")
 
-
+print("\n")
