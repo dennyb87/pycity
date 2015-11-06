@@ -7,10 +7,12 @@ whether a number is prime. Use this function to
 find the number of prime numbers less than 10,000.
 '''
 
+import math
+
 # Check whether number is prime 
 def isPrime(number):
-    divisor = 2
-    while divisor <= number / 2:
+    divisor, bound = 2, int(math.sqrt(number))
+    while divisor <= bound:
         if number % divisor == 0:
             # If true, number is not prime
             return False # number is not a prime
