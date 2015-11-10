@@ -23,7 +23,7 @@ Theformattednumberis000453
 
 def format(n, width):
     ZERO = "0"
-    number = list(n)
+    number = list(str(n))
     num_len = len(number)
     diff = width - num_len
     if diff > 0:
@@ -32,7 +32,7 @@ def format(n, width):
 
 if __name__ == "__main__":
     
-    number = input("Enter an integer: ")
+    number = int(input("Enter an integer: "))
     width = int(input("Enter the width: "))
     formatted = format(number, width)
     msg = "The formatted number is {}".format(formatted)

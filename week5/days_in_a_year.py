@@ -16,7 +16,7 @@ def numberOfDaysInAYear(year):
 
 def numberOfDaysInRange(start, end):
     days = 0
-    for y in range(start, end + 1):
+    for y in range(start, end):
         days += numberOfDaysInAYear(y)
     return days
 
