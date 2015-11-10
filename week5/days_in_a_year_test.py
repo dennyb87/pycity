@@ -17,5 +17,4 @@ class DaysInAYearTest(unittest.TestCase):
         self.assertEqual(numberOfDaysInRange(2000, 2001), 366)
 
 if __name__ == "__main__":
-
     unittest.main()

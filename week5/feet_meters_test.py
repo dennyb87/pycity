@@ -9,7 +9,5 @@ class FeetMetersTest(unittest.TestCase):
     def test_meterToFoot(self):
         self.assertEqual(meterToFoot(0.305), 1)
 
-
 if __name__ == "__main__":
-
     unittest.main()

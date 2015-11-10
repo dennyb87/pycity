@@ -12,7 +12,7 @@ from card_validation import (
 class CardValidationTest(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
-        super(Test, self).__init__(*args, **kwargs)
+        super(CardValidationTest, self).__init__(*args, **kwargs)
         self.card_number = "4388576018410707"
         self.matrix = numberToMatrix(self.card_number)
         self.odds = getOddDigits(self.matrix)
@@ -37,5 +37,4 @@ class CardValidationTest(unittest.TestCase):
         self.assertEqual(isValid(self.card_number), True)
 
 if __name__ == "__main__":
-
     unittest.main()

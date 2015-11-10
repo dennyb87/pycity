@@ -7,5 +7,4 @@ class IntFormatTest(unittest.TestCase):
         self.assertEqual(format("1", 2), "01")
 
 if __name__ == "__main__":
-
     unittest.main()

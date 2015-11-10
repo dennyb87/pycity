@@ -9,5 +9,4 @@ class MatrixTest(unittest.TestCase):
         self.assertEqual(len(matrix), 2)
 
 if __name__ == "__main__":
-
     unittest.main()

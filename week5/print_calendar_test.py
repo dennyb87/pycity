@@ -25,5 +25,4 @@ class PrintCalendarTest(unittest.TestCase):
         self.assertEqual(isLeapYear(2000), True)
 
 if __name__ == "__main__":
-
     unittest.main()
