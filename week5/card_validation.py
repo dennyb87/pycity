@@ -23,62 +23,86 @@ left in the card number.
 the card number is valid; otherwise, it is invalid.
 For example, the number 4388576018402626 is invalid
 but the number 4388576018410707 is valid.
+
+Credit card numbers follow certain patterns:
+It must have between 13 and 16 digits
+and the number must start with:
+
+4  for Visa cards 
+5  for MasterCard credit cards 
+37 for American Express cards 
+6  for Discover cards 
 '''
 
-#Create a matrix of numbers from card number string
 def numberToMatrix(number):
+    '''Create a matrix of numbers from card number string'''
     return [ int(char) for char in number ]  
 
-#Get odd place digits
 def getOddDigits(number):
+    '''Get odd place digits'''
     return number[::2]
 
-#Get even place digits
 def getEvenDigits(number):
+    '''Get even place digits'''
     return number[1::2]
 
-#Return true if the card number isvalid
 def isValid(number):
+    '''Return true if the card number isvalid'''
     matrix = numberToMatrix(number)
     odds = getOddDigits(matrix)
     even = getEvenDigits(matrix)
     sumOdds = sumOfDoubleOddPlace(odds)
     sumEven = sumOfEvenPlace(even)
-    valid = (sumOdds + sumEven) % 10 == 0
-    return valid
+    validNumber = (sumOdds + sumEven) % 10 == 0
+    validLen = lenValidator(number)
+    validPrefix = prefixValidator(number)
+    return validNumber and validLen and validPrefix
 
-#Return sum of odd place digits in number
 def sumOfDoubleOddPlace(number):
-    total = 0
-    for n in number:
-        total += getDigit(n)
-    return total
+    '''Return sum of odd place digits in number'''
+    return sum([ getDigit(n) for n in number ])
 
-#Get result from step 2
 def sumOfEvenPlace(number):
+    '''Get result from step 2'''
     return sum(number)
 
-#Return this number if it is a single digit,otherwise,return
-#the sum of the two digits
 def getDigit(number):
+    '''
+    Return this number if it is a single digit, otherwise,
+    return the sum of the two digits
+    '''
     number = number * 2
     if number < 10:
         return number
     n = [ int(n) for n in list(str(number)) ]
     return sum(n)
 
-#Return true if the digit d is a prefix for number
+def lenValidator(number):
+    '''Return True if number has between 13 and 16 digits'''
+    return 13 <= len(number) <= 16
+
+def prefixValidator(number):
+    '''Return True if a prefix is matched'''
+    PREFIXES = [4, 5, 37, 6]
+    for prefix in PREFIXES:
+        if prefixMatched(number, prefix):
+            return True
+    return False
+
 def prefixMatched(number, d):
-    pass
+    '''Return true if the digit d is a prefix for number'''
+    return d == getPrefix(number, getSize(d))
 
-#Return the number of digits in d
 def getSize(d):
-    pass
+    '''Return the number of digits in d'''
+    return len(str(d))
 
-#Return the first k number of digits from number. If the
-#number of digits in number is less than k,return number.
 def getPrefix(number, k):
-    pass
+    '''
+    Return the first k number of digits from number. If the
+    number of digits in number is less than k,return number.
+    '''
+    return int(number[:k])
 
 if __name__ == "__main__":
 

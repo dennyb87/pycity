@@ -1,7 +1,7 @@
 import unittest
+from feet_meters import footToMeter, meterToFoot
 
-
-class Test(unittest.TestCase):
+class FeetMetersTest(unittest.TestCase):
     
     def test_footToMeters(self):
         self.assertEqual(footToMeter(1), 0.305)
@@ -12,5 +12,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
 
-    from feet_meters import footToMeter, meterToFoot
     unittest.main()

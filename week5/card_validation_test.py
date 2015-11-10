@@ -1,7 +1,15 @@
 import unittest
+from card_validation import (
+    numberToMatrix,
+    getOddDigits,
+    getEvenDigits,
+    sumOfDoubleOddPlace,
+    sumOfEvenPlace,
+    getDigit,
+    isValid
+)
 
-
-class Test(unittest.TestCase):
+class CardValidationTest(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
         super(Test, self).__init__(*args, **kwargs)
@@ -30,13 +38,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
 
-    from card_validation import (
-        numberToMatrix,
-        getOddDigits,
-        getEvenDigits,
-        sumOfDoubleOddPlace,
-        sumOfEvenPlace,
-        getDigit,
-        isValid
-    )
     unittest.main()

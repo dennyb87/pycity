@@ -1,7 +1,13 @@
 import unittest
+from print_calendar import (
+    getMonthName,
+    getStartDay,
+    getTotalNumberOfDays,
+    getNumberOfDaysInMonth,
+    isLeapYear,
+)
 
-
-class Test(unittest.TestCase):
+class PrintCalendarTest(unittest.TestCase):
 
     def test_getMonthName(self):
         self.assertEqual(getMonthName(1), "January")
@@ -20,11 +26,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
 
-    from print_calendar import (
-        getMonthName,
-        getStartDay,
-        getTotalNumberOfDays,
-        getNumberOfDaysInMonth,
-        isLeapYear,
-    )
     unittest.main()

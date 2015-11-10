@@ -1,7 +1,7 @@
 import unittest
+from matrix import squareMatrix
 
-
-class Test(unittest.TestCase):
+class MatrixTest(unittest.TestCase):
     
     def test_squareMatrix(self):
         matrix = squareMatrix(2)
@@ -10,5 +10,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
 
-    from matrix import squareMatrix
     unittest.main()

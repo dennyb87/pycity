@@ -1,7 +1,9 @@
 import unittest
+from days_in_a_year import (
+    isLeapYear, numberOfDaysInAYear, numberOfDaysInRange
+)
 
-
-class Test(unittest.TestCase):
+class DaysInAYearTest(unittest.TestCase):
     
     def test_isLeapYear(self):
         self.assertEqual(isLeapYear(2000), True)
@@ -16,7 +18,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
 
-    from days_in_a_year import (
-        isLeapYear, numberOfDaysInAYear, numberOfDaysInRange
-    )
     unittest.main()

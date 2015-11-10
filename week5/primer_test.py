@@ -1,7 +1,7 @@
 import unittest
+from primer import isPrime, primeInRange
 
-
-class Test(unittest.TestCase):
+class PrimerTest(unittest.TestCase):
     
     def test_isPrime(self):
         self.assertEqual(isPrime(2), True)
@@ -12,5 +12,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
 
-    from primer import isPrime, primeInRange
     unittest.main()
