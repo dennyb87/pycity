@@ -35,8 +35,8 @@ class Stock:
         self.__price_current = price
 
     def get_change_percent(self):
-        percent = 1 - (self.get_price_close() / self.get_price_current())
-        return -percent
+        percent = self.get_price_close() / self.get_price_current()
+        return -(1 - percent)
 
 if __name__ == "__main__":
     stock = Stock("INTC", "Intel Corporation", 20.50, 20.35)
