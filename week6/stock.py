@@ -35,7 +35,7 @@ class Stock:
         self.__price_current = price
 
     def get_change_percent(self):
-        percent = 1 - (self.__price_close / self.__price_current)
+        percent = 1 - (self.get_price_close() / self.get_price_current())
         return -percent
 
 if __name__ == "__main__":

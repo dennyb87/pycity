@@ -10,8 +10,8 @@ from datetime import datetime
 class StopWatch:
 
     def __init__(self):
-        self.__startTime = None
-        self.__endTime = None
+        self.__startTime = 0
+        self.__endTime = 0
 
     def start(self):
         self.__startTime = datetime.now()
@@ -19,8 +19,14 @@ class StopWatch:
     def stop(self):
         self.__endTime = datetime.now()
 
+    def get_start_time(self):
+        return self.__startTime
+
+    def get_end_time(self):
+        return self.__endTime
+
     def get_elapsed_time(self):
-        return self.__endTime - self.__startTime
+        return self.get_end_time() - self.get_start_time()
 
     def timeit(self, func):
         self.start()
