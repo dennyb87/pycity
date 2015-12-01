@@ -16,14 +16,11 @@ The distinct numbers are: 1 2 3 6 4 5
 def eliminate_duplicates(lst):
     lst = lst.copy()
     lst.sort()
-    lenght = len(lst)
-    first_item = lst[0]
     idx = 0
-    result = [first_item]
-    for i in range(lenght):
-        current = lst[i]
-        if current != result[idx]:
-            result.append(current)
+    result = [lst[0]]
+    for n in lst:
+        if n != result[idx]:
+            result.append(n)
             idx += 1
     return result
 
@@ -33,4 +30,5 @@ if __name__ == "__main__":
     numbers = [ int(n) for n in user_input.split(' ')]
     lst = eliminate_duplicates(numbers)
     msg = 'The distinct numbers are {}'.format(lst)
+    print(msg)
 

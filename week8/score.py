@@ -35,7 +35,7 @@ def scorer(points):
 
 if __name__ == "__main__":
     user_input = input('Enter scores: ')
-    points = [ int(n) for n in user_input.split(' ')]
+    points = [int(n) for n in user_input.split(' ')]
     scores = scorer(points)
     for n in range(len(points)):
         msg = 'Student {} score is {} and grade is {}'.format(
