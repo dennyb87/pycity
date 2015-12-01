@@ -74,7 +74,7 @@ if __name__ == "__main__":
     color = input('Enter color: ')
     filled = int(input('Enter filled: '))
 
-    triangle = Triangle()
+    triangle = Triangle(side1, side2, side3, color, filled)
 
     msg = "Triangle:\n area:{}\n perimeter:{}\n color:{}\n isFilled:{}"\
         .format(
