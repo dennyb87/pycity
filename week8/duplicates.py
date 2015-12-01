@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+"""Eliminate Duplicates
 Write a function that returns a new list by eliminating the duplicate
 values in the list. Use the following function header: 
 def eliminateDuplicates(lst):
@@ -30,8 +30,8 @@ def eliminate_duplicates(lst):
 
 if __name__ == "__main__":
     user_input = input('Enter ten numbers: ')
-    numbers = [ int(n) for n in user_input.split(' ')]
+    numbers = user_input.split(' ')
     lst = eliminate_duplicates(numbers)
-    msg = 'The distinct numbers are {}'.format(lst)
+    msg = 'The distinct numbers are {}'.format(' '.join(lst))
     print(msg)
 
