@@ -14,14 +14,12 @@ from bubble import bubble_sort
 
 def is_anagram(s1, s2):
     s1, s2 = list(s1), list(s2)
-    bubble_sort(s1)
-    bubble_sort(s2)
+    bubble_sort(s1), bubble_sort(s2)
     return s1 == s2
 
 
 if __name__ == "__main__":
-    s1 = input('Enter a string 1: ')
-    s2 = input('Enter a string 2: ')
+    s1, s2 = input('Enter a string 1: '), input('Enter a string 2: ')
     msg = 'The two string are not anagrams'
     if is_anagram(s1, s2):
         msg = 'The string "{}" is the anagram of "{}"'.format(s1, s2)

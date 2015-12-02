@@ -17,35 +17,45 @@ class Hangman:
         self.words = ["write", "that", "program"]
         shuffle(self.words)
         self.word = list(self.words[0])
-        self.remain = list(self.word)
-        self.guessed = [0 for char in self.word]
+        self.remain = self.word.copy()
+        self.guessed = [0] * len(self.word)
         self.games = 0
         self.missed = 0
 
-    def first_guess(self, char, idx):
-        return self.guessed[idx] != char
+    def already_guessed(self, idx, char):
+        return self.guessed[idx] == char
 
-    def run(self):
+    def ask_char(self):
         hidden = [char if char != 0 else '*' for char in self.guessed]
         msg = 'Enter a letter in word {} >'.format(
             ' '.join(hidden)
         )
-        char = input(msg)
-        if char in self.word:
-            if char in self.remain:
-                idx = self.remain.index(char)
-                if self.first_guess(char, idx):
-                    self.guessed[idx] = char
-                    self.remain[idx] = 0
-                else:
-                    print('{} is already in the word'.format(char))
-            else:
-                print('{} is already in the word'.format(char))
-        else:
+        return input(msg)
+
+    def all_guessed(self):
+        return 0 not in self.guessed
+
+    def run(self):
+        char = self.ask_char()
+
+        if char not in self.word:
             print('{} is not in the word'.format(char))
             self.missed += 1
+            return self.run()
 
-        if 0 in self.guessed:
+        if char not in self.remain:
+            print('{} is already in the word'.format(char))
+            return self.run()
+
+        idx = self.remain.index(char)
+
+        if not self.already_guessed(idx, char):
+            self.guessed[idx] = char
+            self.remain[idx] = 0
+        else:
+            print('{} is already in the word'.format(char))
+
+        if not self.all_guessed():
             return self.run()
         else:
             self.games += 1
@@ -55,18 +65,24 @@ class Hangman:
                 ''.join(self.word), self.missed
             )
         )
+
         if self.want_play_again():
             return self.new_game()
 
-        print('Hangman end game!')
+        return self.end_game()
 
+    def end_game(self):
+        print('Hangman end game!')
 
     def want_play_again(self):
         play_again = input(
             'Do you want to guess another word? Enter y or n > '
         )
-        return play_again == 'y'
-
+        if play_again == 'y':
+            return True
+        elif play_again == 'n':
+            return False
+        return self.want_play_again()
 
     def reset(self):
         self.__init__()

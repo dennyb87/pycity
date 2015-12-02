@@ -14,7 +14,6 @@ and displays the sorted numbers. 
 
 
 def bubble_sort(lst):
-
     sorted = False
     len_lst = len(lst)
     while not sorted:
@@ -24,6 +23,7 @@ def bubble_sort(lst):
             if a > b:
                 lst[i], lst[i+1] = b, a
                 sorted = False
+
 
 if __name__ == "__main__":
     user_input = input('Enter ten numbers: ')
