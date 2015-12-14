@@ -4,6 +4,6 @@ python:
 # command to install dependencies
 install: "pip install nose"
 # command to run tests
-script: nosetests --with-coverage /week8
+script: nosetests --with-coverage week8/
 after_success:
   - coveralls
