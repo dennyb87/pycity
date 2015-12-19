@@ -3,7 +3,7 @@ import unittest
 from hi_fiven import hi_fiven
 
 
-class ChineseZodiacTest(unittest.TestCase):
+class HiFivenTest(unittest.TestCase):
 
     def test_hi_fiven(self):
         self.assertEqual(hi_fiven(5), 'HiFive\n')
