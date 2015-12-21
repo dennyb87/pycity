@@ -8,20 +8,20 @@ and the month, and then it displays the
 entire calendar for the month.
 '''
 
-def printMonth(year, month):
+def printMonth(year, month):  # pragma: no cover
     print("\n") 
     printMonthTitle(year, month)
     printMonthBody(year, month)
     print("\n")
 
-def printMonthTitle(year, month):
+def printMonthTitle(year, month):  # pragma: no cover
     month = "{:>15}{:>5}".format(getMonthName(month), year)
     print(month)
     print("----------------------------")
     week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fry", "Sat"]
     print(" ".join(week))
 
-def printMonthBody(year, month):
+def printMonthBody(year, month):  # pragma: no cover
     start = getStartDay(year, month)
     i = 1 - start
     totalDays = getNumberOfDaysInMonth(year, month)
@@ -71,7 +71,7 @@ def getNumberOfDaysInMonth(year, month):
 def isLeapYear(year): 
     return year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)
 
-def main():
+def main():  # pragma: no cover
     year = int(input("Enter full year (e.g., 2001): "))
     month = int(input(("Enter month as number between 1 and 12: ")))
     printMonth(year, month)
