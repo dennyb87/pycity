@@ -27,14 +27,12 @@ def squareMatrix(size):
         sub = []  
     return matrix
 
-def printMatrix(matrix):
+
+if __name__ == "__main__":
+
+    matrix = squareMatrix(5)
     for sub in matrix:
         print("\n")
         for bit in sub:
             print(bit, end="    ")
     print("\n")
-
-if __name__ == "__main__":
-
-    matrix = squareMatrix(5)
-    printMatrix(matrix)
