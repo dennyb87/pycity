@@ -28,10 +28,10 @@ class Stock:
     def get_price_current(self):
         return self.__price_current
 
-    def set_price_close(self):
+    def set_price_close(self):  # pragma: no cover
         self.__price_close = self.__price_current
 
-    def set_price_current(self, price):
+    def set_price_current(self, price):  # pragma: no cover
         self.__price_current = price
 
     def get_change_percent(self):
