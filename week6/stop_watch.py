@@ -13,10 +13,10 @@ class StopWatch:
         self.__startTime = 0
         self.__endTime = 0
 
-    def start(self):
+    def start(self):  # pragma: no cover
         self.__startTime = datetime.now()
 
-    def stop(self):
+    def stop(self):  # pragma: no cover
         self.__endTime = datetime.now()
 
     def get_start_time(self):
@@ -28,7 +28,7 @@ class StopWatch:
     def get_elapsed_time(self):
         return self.get_end_time() - self.get_start_time()
 
-    def timeit(self, func):
+    def timeit(self, func):  # pragma: no cover
         self.start()
         func()
         self.stop()
