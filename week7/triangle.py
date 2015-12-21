@@ -61,7 +61,7 @@ class Triangle(GeometricObject):
         )
         return area
 
-    def __str__(self):
+    def __str__(self):  # pragma: no cover
         info = "Triangle: side1 = {} side2 = {} side3 = {}".format(
             self.__side1, self.__side2, self.__side3
         )
